@@ -1,0 +1,28 @@
+services:
+  web:
+    image: php:7.3-apache
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: apache
+    ports:
+      - "80:80"
+    volumes:
+      - ./PHP/:/var/www/html
+  # MYSQL
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+      - MYSQL_DATABASE=clientes_db
+      - MYSQL_PASSWORD=passwd
+      - MYSQL_ROOT_PASSWORD=passwd
+    ports:
+      - "3306"
+    volumes:
+      - ./SQL/script.sql:/docker-entrypoint-initdb.d/script.sql
+  adminer:
+    image: adminer:4
+    restart: always
+    ports:
+      - 8080:8080

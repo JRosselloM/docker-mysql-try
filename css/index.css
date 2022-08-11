@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    font-family:monospace;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+div.content{
+    width: 100%;
+    height: auto;
+    padding: 25px;
+}
+
+h1.title{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+table.table{
+    width: 100%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top:25px;
+}
+
+td.col-4{
+    text-align: center;
+}
+
+/* MEDIA QUERY */
+@media only screen and (max-width: 600px) {
+    div.content{
+        padding: 5px;
+    }
+    div.col-6{
+        width: 100%;
+    }
+
+    table.table{
+        margin-top: 25px;
+    }
+}
